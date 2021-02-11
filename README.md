@@ -1,1 +1,1 @@
-# cse_practicals
+# Computer Science Lab Work
