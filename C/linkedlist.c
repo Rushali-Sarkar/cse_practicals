@@ -97,11 +97,6 @@ _Bool isPresent(struct LinkedList* list, int item) {
 
 void insertBeforeNode(struct LinkedList* list, int node, int insert) {
 
-    if (!isPresent(list, insert)) {
-        insertAtHead(list, insert);
-        return;
-    }
-    
     struct Node* previousNode = malloc(sizeof(struct Node));
     struct Node* currentNode = malloc(sizeof(struct Node));
     struct Node* newNode = malloc(sizeof(struct Node));
@@ -126,11 +121,7 @@ void insertBeforeNode(struct LinkedList* list, int node, int insert) {
 
 void insertAfterNode(struct LinkedList* list, int node, int insert) {
 
-     if (!isPresent(list, insert)) {
-        insertAtTail(list, insert);
-        return;
-    }
-
+   
     struct Node* currentNode = malloc(sizeof(struct Node));
     struct Node* newNode = malloc(sizeof(struct Node));
 
