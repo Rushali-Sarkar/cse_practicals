@@ -21,7 +21,6 @@ void insertAfterNode(struct doublylinkedlist*, int, int);
 void deleteAtHead(struct doublylinkedlist*);
 void deleteAtTail(struct doublylinkedlist*);
 void deleteParticularNode(struct doublylinkedlist*, int);
-_Bool isPresent(struct doublylinkedlist*, int);
 void menu();
 
 struct doublylinkedlist* createDoublyLinkedList() {
@@ -176,15 +175,15 @@ void deleteParticularNode(struct doublylinkedlist* dllist, int node) {
     return;
 }
 
-_Bool isPresent(struct doublylinkedlist* dllist, int item) {
+int isPresent(struct doublylinkedlist* dllist, int item) {
     struct Node* current_node = malloc(sizeof(struct Node));
     current_node = dllist -> head -> next;
     while (current_node == NULL) {
         if (current_node -> data == item)
-            return true;
+            return 1;
         current_node = current_node -> next;
     }
-    return false;
+    return 0;
 }
 
 void menu() {
@@ -196,9 +195,8 @@ void menu() {
     printf("6. Delete the Head Element of the Doubly Linked List\n");
     printf("7. Delete the Tail Element of the Doubly Linked List\n");
     printf("8. Delete a Particular Node of the Doubly Linked List\n");
-    printf("9. See if an Item is Present in the Doubly Linked List\n");
-    printf("10. See the Menu Again\n");
-    printf("11. Exit\n");
+    printf("9. See the Menu Again\n");
+    printf("10. Exit\n");
     return;
 }
 
@@ -252,17 +250,9 @@ int main(int argc, char* argv[]) {
                 deleteParticularNode(dllist, node);
                 break;
             case 9:
-                printf("Enter the item you want to check\n");
-                scanf("%d", &item);
-                if (isPresent(dllist, item))
-                    printf("%d is present in the Doubly Linked List\n", item);
-                else
-                    printf("%d is not present in the Doubly Linked List\n", item);
-                break;
-            case 10:
                 menu();
                 break;
-            case 11:
+            case 10:
                 printf("Exiting....\n");
                 isExploring = false;
                 break;
