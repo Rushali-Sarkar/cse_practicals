@@ -51,3 +51,17 @@ int main(int argc, char* argv[]) {
     show(arr, size);
     return 0;
 }
+
+rushali@Rushali:/mnt/c/Users/Rushi/Desktop/cse_practicals/C$ gcc selectionsort.c
+rushali@Rushali:/mnt/c/Users/Rushi/Desktop/cse_practicals/C$ ./a.out
+Enter the number of elememts you want to enter in the array
+6
+78
+54
+43
+90
+22
+34
+The elements in sorted array is:
+22      34      43      54      78      90
+rushali@Rushali:/mnt/c/Users/Rushi/Desktop/cse_practicals/C$
